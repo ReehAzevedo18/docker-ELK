@@ -85,6 +85,19 @@
 	</dependencies>
 
 	<!-- Dependencia do Sleuth-->
+	<dependencyManagement>
+		<dependencies>
+			<!-- Sleuth automatically adds trace interceptors when in the classpath -->
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-sleuth-dependencies</artifactId>
+
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>

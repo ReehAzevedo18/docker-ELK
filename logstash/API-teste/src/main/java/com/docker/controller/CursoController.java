@@ -1,5 +1,6 @@
 package com.docker.controller;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -10,6 +11,7 @@ public class CursoController {
 
     private static final Logger LOG = LoggerFactory.getLogger(CursoController.class);
 
+    @Bean
     @GetMapping
     public int soma(){
         int n1 = 2, n2 = 4;
@@ -19,4 +21,6 @@ public class CursoController {
         return s;
 
     }
+
+
 }
