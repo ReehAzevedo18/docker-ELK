@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/docker-ELK.iml" filepath="$PROJECT_DIR$/.idea/docker-ELK.iml" />
-      <module fileurl="file://$PROJECT_DIR$/logstash/API-teste/teste.iml" filepath="$PROJECT_DIR$/logstash/API-teste/teste.iml" />
+      <module fileurl="file://$PROJECT_DIR$/API-teste/teste.iml" filepath="$PROJECT_DIR$/API-teste/teste.iml" />
     </modules>
   </component>
 </project>
