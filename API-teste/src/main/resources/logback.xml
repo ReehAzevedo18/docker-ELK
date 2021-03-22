@@ -41,21 +41,29 @@
             <pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</pattern>
         </encoder>
     </appender>
-
-
     <appender name="STASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <destination>localhost:5000</destination>
         <!-- encoder is required -->
-        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
+
+<!--        <encoder>  <pattern>%d %-5level [%thread] %logger{0}: %msg%n</pattern></encoder>-->
     </appender>
 
-    <logger name="com.docker.TesteApplication" level="INFO"></logger>
-    <logger name="com.docker.controller.CursoController" level="INFO"></logger>
+        <logger name="com.docker.controller" level="INFO">
+            <appender-ref ref="STASH"/>
+        </logger>
 
-    <root level="INFO">
+
+ <!--   <logger name="com.docker.controller.CursoController" level="INFO">
         <appender-ref ref="STASH"/>
-<!--        <appender-ref ref="${LOG_APPENDER:-out-json}"/>-->
+    </logger>
+    <logger name="com.docker.controller.SleuthController" level="ERROR">
+        <appender-ref ref="STASH"/>
+    </logger>-->
+
+    <root level="TRACE">
         <appender-ref ref="out-console"/>
+        <!--        <appender-ref ref="${LOG_APPENDER:-out-json}"/>-->
     </root>
 
 </configuration>
