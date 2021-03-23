@@ -14,7 +14,6 @@ public class SleuthController {
 
     private static Logger log = LoggerFactory.getLogger(SleuthController.class);
 
-
     @GetMapping
     public String testApp(){
         log.debug("Não deve aparecer!");
