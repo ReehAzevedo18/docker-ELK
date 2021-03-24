@@ -50,7 +50,7 @@
 
     </appender>
 
-    <!--<appender name="MONGO" class="logback.mongodb.MongoDBAppender">
+   <!-- <appender name="MONGO" class="logback.mongodb.MongoDBAppender">
         <connectionSource class="logback.mongodb.MongoDBConnectionSource">
             <uri>mongodb://localhost</uri>
             <db>dockerElk</db>
