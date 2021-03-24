@@ -45,26 +45,35 @@
     <appender name="STASH" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
         <destination>localhost:5000</destination>
         <!-- encoder is required -->
- <encoder class="net.logstash.logback.encoder.LogstashEncoder"/>
-<!--        <encoder>  <pattern>%d %-5level [%thread] %logger{0}: %msg%n</pattern></encoder>-->
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+        <!--        <encoder>  <pattern>%d %-5level [%thread] %logger{0}: %msg%n</pattern></encoder>-->
 
     </appender>
 
-        <logger name="com.docker.controller" level="INFO">
-            <appender-ref ref="STASH"/>
-        </logger>
+    <!--<appender name="MONGO" class="logback.mongodb.MongoDBAppender">
+        <connectionSource class="logback.mongodb.MongoDBConnectionSource">
+            <uri>mongodb://localhost</uri>
+            <db>dockerElk</db>
+            <collection>curso</collection>
+        </connectionSource>
+    </appender>-->
 
-
- <!--   <logger name="com.docker.controller.CursoController" level="INFO">
-        <appender-ref ref="STASH"/>
+    <logger name="com.docker.controller" level="INFO">
+        <appender-ref ref="STASH" />
     </logger>
-    <logger name="com.docker.controller.SleuthController" level="ERROR">
-        <appender-ref ref="STASH"/>
-    </logger>-->
+
+
+    <!--   <logger name="com.docker.controller.CursoController" level="INFO">
+           <appender-ref ref="STASH"/>
+       </logger>
+       <logger name="com.docker.controller.SleuthController" level="ERROR">
+           <appender-ref ref="STASH"/>
+       </logger>-->
 
     <root level="TRACE">
-        <appender-ref ref="out-console"/>
+        <appender-ref ref="out-console" />
         <!--        <appender-ref ref="${LOG_APPENDER:-out-json}"/>-->
+<!--        <appender-ref ref="MONGO"/>-->
     </root>
 
 </configuration>
